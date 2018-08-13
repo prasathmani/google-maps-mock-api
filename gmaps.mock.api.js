@@ -696,7 +696,13 @@ GoogleApiMock = (function() {
   };
 
   GoogleApiMock.prototype.mockPlaces = function() {
-  return window.google.maps.places = {};
+    return window.google.maps.places = {
+      Autocomplete: function () {
+          return {
+              addListener: function () { }
+          };
+        }
+    };
   };
 
   GoogleApiMock.prototype.mockSearchBox = function(SearchBox) {
