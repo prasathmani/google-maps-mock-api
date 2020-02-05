@@ -661,7 +661,8 @@ GoogleApiMock = (function() {
       this.mockMap,
       this.mockPlaces,
       this.mockSearchBox,
-      this.mockGeometry
+      this.mockGeometry,
+      this.mockGeocoder
   ];
   this.initAll = function() {
       return this.mocks.forEach(function(fn) {
@@ -1005,6 +1006,14 @@ GoogleApiMock = (function() {
       };
       return this;
   };
+  };
+  
+  GoogleApiMock.prototype.mockGeocoder = function(Geocoder) {
+    if (Geocoder == null) {
+      Geocoder = function() {
+      };
+    }
+    return window.google.maps.Geocoder = Geocoder;
   };
 
   GoogleApiMock.prototype.mockGeometry = function(geometry) {
