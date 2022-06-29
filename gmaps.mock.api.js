@@ -1,14 +1,14 @@
 /**
- * Author : CCP Programmers
- * global _:true,
- * google:true
- */
+* Author : CCP Programmers
+* global _:true,
+* google:true
+*/
 
 var bind = function(fn, me) {
-    return function() {
-      return fn.apply(me, arguments);
-    };
-  },
+  return function() {
+  return fn.apply(me, arguments);
+  };
+},
   extend = function(child, parent) {
     for (var key in parent) {
       if (hasProp.call(parent, key)) child[key] = parent[key];
