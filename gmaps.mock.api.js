@@ -1,7 +1,7 @@
-/**
+/** 
 * Author : CCP Programmers
-* global _:true,
-* google:true
+* global _:true, 
+* google:true 
 */
 
 var bind = function(fn, me) {
